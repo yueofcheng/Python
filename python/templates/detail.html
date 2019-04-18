@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>{{rs[2]}}</title>
+</head>
+
+
+<body background="{{ url_for('static', filename='images/bg.jpg') }}" >
+
+<ul class="homenav">
+  <li class="homenavimg"><img src="{{ url_for('static', filename='images/logo.jpg') }}" height="50px" width="90px"/></li>
+  <li class="navtitle"><h1><font color="red">中传要闻</font></h1></li>
+</ul>
+
+<!--<div class="nav"><img src="{{ url_for('static', filename='images/logo.jpg') }}" height="50px" width="90px"/>
+    <div class="title"><h1><font color="red">中传要闻</font></h1></div>
+</div>-->
+
+<div class="news">
+    <h2>
+        <center>{{rs[2]}}</center>
+    </h2>
+    <h4>
+        <center>来源：{{rs[3]}}&nbsp;&nbsp;&nbsp;&nbsp;日期：{{rs[4]}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浏览量：{{rs[6]}}</center>
+    </h4>
+    <a href="{{rs[1]}}" target="_blank"><center>数据来源：{{ rs[2]}}</center></a>
+    <br></div>
+    <div class="passage"><p>{% for r in news %}
+
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{r}}<br/><br/>
+
+   {%   endfor %}</p></div>
+<div class="footer__bottom">
+    <div class="container text-center">
+        <span class="copyright">By 计算机科学与技术（大数据技术与应用） 孟凡雪 程越 张楚洁
+           </span></div>
+</div>
+</body>
+</html>
